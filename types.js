@@ -9,29 +9,24 @@ const typeCount = {
 };
 
 for (const item of arr) {
-  const type = typeof item;
-  if (typeCount.hasOwnProperty(type)) {
-    typeCount[type]++;
-  } else {
-    typeCount[type] = 1;
-  }
+  typeCount[typeof item] += 1;
 }
 
 console.log(typeCount);
 
 //динамічно
 
-const arr = [true, 'hello', 90, 227, -200, false, 'false', 'word', 3.14, 'another string', null, {}, []];
+const arr1 = [true, 'hello', 90, 227, -200, false, 'false', 'word', 3.14, 'another string', null, {}, [], undefined];
 
-const typeCount = {};
+const typeCount1 = {};
 
-for (const item of arr) {
+for (const item of arr1) {
   const type = typeof item;
-  if (type in typeCount) {
-    typeCount[type]++;
+  if (type in typeCount1) {
+    typeCount1[type]++;
   } else {
-    typeCount[type] = 1;
+    typeCount1[type] = 1;
   }
 }
 
-console.log(typeCount);
+console.log(typeCount1);
